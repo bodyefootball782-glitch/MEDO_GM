@@ -21,6 +21,35 @@ window.addEventListener("load", () => {
 // ======================
 // MUSIC
 // ======================
+// MUSIC PLAYER
+
+const audio =
+    document.getElementById(
+        "bgMusic"
+    );
+
+function playMusic(file){
+
+    audio.src = file;
+
+    audio.play();
+
+}
+
+const volume =
+    document.getElementById(
+        "volume"
+    );
+
+volume.addEventListener(
+    "input",
+    () => {
+
+        audio.volume =
+            volume.value / 100;
+
+    }
+);
 
 const music =
     document.getElementById(

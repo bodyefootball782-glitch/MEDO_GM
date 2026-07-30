@@ -2,314 +2,377 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>MEDO GM</title>
+<title>itsFR3ON</title>
 
-    <link rel="stylesheet"
-          href="style.css">
+<link rel="stylesheet"
+      href="style.css">
 
 </head>
 
 <body>
 
-    <!-- Discord -->
+<a href="https://discord.gg/BUpXnPUz2"
+   target="_blank"
+   class="discord-top-btn">
 
-    <a href="https://discord.gg/mQYqGksMM"
-       target="_blank"
-       class="discord-top-btn">
+    🚀 GO TO DISCORD
 
-        🚀 GO TO DISCORD
+</a>
 
-    </a>
+<div class="language-switch">
 
-    <!-- Languages -->
+    <button id="enBtn"
+            class="active">
+        EN
+    </button>
 
-    <div class="language-switch">
+    <button id="arBtn">
+        ع
+    </button>
 
-        <button id="enBtn"
-                class="active">
-            EN
+</div>
+
+<video id="bgVideo"
+       autoplay
+       muted
+       loop
+       playsinline
+       style="display:none;">
+
+    <source src="background.mp4"
+            type="video/mp4">
+
+</video>
+
+<audio id="bgMusic"></audio>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            itsFR3ON
+        </h1>
+
+        <p class="tagline">
+            Best Of Streamer
+        </p>
+
+        <div class="status">
+            ● OFFLINE
+        </div>
+
+        <a href="https://kick.com/itsfr3on"
+           target="_blank"
+           class="kick-btn">
+
+            WATCH ON KICK
+
+        </a>
+
+        <button id="musicBtn"
+                class="music-btn">
+
+            🎵 MUSIC
+
         </button>
 
-        <button id="arBtn">
-            ع
-        </button>
+        <div id="musicMenu">
+
+            <h3>
+                SELECT MUSIC
+            </h3>
+
+            <button onclick="playMusic('music1.mp3')">
+                1
+            </button>
+
+            <button onclick="playMusic('music2.mp3')">
+               2
+            </button>
+
+            <button onclick="playMusic('music3.mp3')">
+               3
+            </button>
+
+            <button onclick="playMusic('music4.mp3')">
+                4
+            </button>
+
+            <button onclick="playMusic('music5.mp3')">
+               5
+            </button>
+
+            <br><br>
+
+            🔉
+
+            <input type="range"
+                   id="volume"
+                   min="0"
+                   max="100"
+                   value="50">
+
+            🔊
+
+        </div>
+
+        <div class="links">
+
+            <a href="https://youtube.com/@itsfr3on?si=9Deh6WCsXRzLaKwh"
+               target="_blank">
+                YouTube
+            </a>
+
+            <a href="https://tikalert-eg.com/Amir"
+               target="_blank">
+                Donations
+            </a>
+
+            <a href="https://www.tiktok.com/@_itsfr3on"
+               target="_blank">
+                TikTok
+            </a>
+
+            <a href="https://discord.gg/BUpXnPUz2"
+               target="_blank">
+                Discord
+            </a>
+
+            <a href="https://www.facebook.com/share/19H9f4yeRw/"
+               target="_blank">
+                Facebook
+            </a>
+
+            <a href="https://whatsapp.com/channel/0029VbCzlKHEawdwVH2MOR3j"
+               target="_blank">
+                WhatsApp
+            </a>
+
+            <a href="#clips">
+                Clips
+            </a>
+
+        </div>
 
     </div>
 
-    <!-- Background Video -->
+</section>
 
-    <video id="bgVideo"
-           autoplay
-           muted
-           loop
-           playsinline
-           style="display:none;">
+<h2 class="scroll">
 
-        <source src="background.mp4"
-                type="video/mp4">
+    ↓ SCROLL DOWN ↓
 
-    </video>
+</h2>
 
-    <!-- Music -->
+<section class="cards">
+<!-- Kick -->
 
-    <audio id="bgMusic"
-           loop>
+    <div class="card">
 
-        <source src="music.mp3"
-                type="audio/mpeg">
+        <img src="gta1.png">
 
-    </audio>
+        <div class="counter-box">
 
-    <!-- HERO -->
+            <h3>Kick</h3>
 
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h1>
-                MEDO GM
-            </h1>
-
-            <p class="tagline">
-                BEST OF STREAMER
+            <p>
+                Followers :
+                <span class="counter"
+                      data-target="18000">
+                    0
+                </span>
             </p>
 
-            <div class="status">
-                ● ONLINE
-            </div>
-
-            <a href="https://kick.com/medo-gm"
-               target="_blank"
-               class="kick-btn">
-
-                WATCH ON KICK
-
-            </a>
-
-            <button id="musicBtn"
-                    class="music-btn">
-
-                🎵 MUSIC
-
-            </button>
-
-            <div class="links">
-
-                <a href="https://kick.com/medo-gm"
-                   target="_blank">
-                    Kick
-                </a>
-
-                <a href="https://www.tiktok.com/@medo_abdelshafi?_r=1&_t=ZS-98T6hsjiO17"
-                   target="_blank">
-                    TikTok
-                </a>
-
-                <a href="https://discord.gg/mQYqGksMM"
-                   target="_blank">
-                    Discord
-                </a>
-
-                <a href="#">
-                    Facebook
-                </a>
-
-                <a href="#">
-                    WhatsApp
-                </a>
-
-            </div>
+            <p>
+                Hours Watched :
+                <span class="counter"
+                      data-target="540000">
+                    0
+                </span>
+            </p>
 
         </div>
 
-    </section>
+    </div>
 
-    <h2 class="scroll">
-        ↓ SCROLL DOWN ↓
+    <!-- TikTok -->
+
+    <div class="card">
+
+        <img src="gta2.png">
+
+        <div class="counter-box">
+
+            <h3>TikTok</h3>
+
+            <p>
+                Followers :
+                <span class="counter"
+                      data-target="125000">
+                    0
+                </span>
+            </p>
+
+            <p>
+                Likes :
+                <span class="counter"
+                      data-target="2300000">
+                    0
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Discord -->
+
+    <div class="card">
+
+        <img src="gta3.png">
+
+        <div class="counter-box">
+
+            <h3>Discord</h3>
+
+            <p>
+                Members :
+                <span class="counter"
+                      data-target="5200">
+                    0
+                </span>
+            </p>
+
+            <p>
+                Online :
+                <span class="counter"
+                      data-target="315">
+                    0
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- YouTube -->
+
+    <div class="card">
+
+        <img src="gta4.png">
+
+        <div class="counter-box">
+
+            <h3>YouTube</h3>
+
+            <p>
+                Subscribers :
+                <span class="counter"
+                      data-target="45000">
+                    0
+                </span>
+            </p>
+
+            <p>
+                Views :
+                <span class="counter"
+                      data-target="1800000">
+                    0
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Extra -->
+
+    <div class="card">
+
+        <img src="gta5.png">
+
+        <div class="counter-box">
+
+            <h3>
+                EXTRA IMAGE
+            </h3>
+
+        </div>
+
+    </div>
+
+    <!-- Donations -->
+
+    <div class="card">
+
+        <img src="gta6.png">
+
+        <div class="counter-box">
+
+            <h3>
+                DONATIONS
+            </h3>
+
+            <p>
+                tikalert-eg.com/Amir
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="clips">
+
+    <h2>
+        BEST CLIPS
     </h2>
 
-    <!-- CARDS -->
+    <div class="clips-container">
 
-    <section class="cards">
+        <video controls>
+            <source src="clip1.mp4"
+                    type="video/mp4">
+        </video>
 
-      <!-- Extra -->
+        <video controls>
+            <source src="clip2.mp4"
+                    type="video/mp4">
+        </video>
 
-        <div class="card">
+        <video controls>
+            <source src="clip3.mp4"
+                    type="video/mp4">
+        </video>
 
-            <img src="gta1.png">
+        <video controls>
+            <source src="clip4.mp4"
+                    type="video/mp4">
+        </video>
 
-            <div class="counter-box">
+    </div>
 
-                <h3>
-                    BEST IN FIVEM
-                </h3>
+</section>
 
-            </div>
+<footer>
 
-        </div>
+    <h2>
+        THANK YOU FOR SUPPORTING
+    </h2>
 
+    <h1>
+        itsFR3ON
+    </h1>
 
-        <!-- TikTok -->
+</footer>
 
-        <div class="card">
-
-            <img src="gta2.png">
-
-            <div class="counter-box">
-
-                <h3>TikTok</h3>
-
-                <p>
-                    Followers :
-                    <span class="counter"
-                          data-target="115">
-                        0
-                    </span>
-                </p>
-
-                <p>
-                    Likes :
-                    <span class="counter"
-                          data-target="350">
-                        0
-                    </span>
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Discord -->
-
-        <div class="card">
-
-            <img src="gta3.png">
-
-            <div class="counter-box">
-
-                <h3>Discord</h3>
-
-                <p>
-                    Members :
-                    <span class="counter"
-                          data-target="70">
-                        0
-                    </span>
-                </p>
-
-                <p>
-                    Online :
-                    <span class="counter"
-                          data-target="40">
-                        0
-                    </span>
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Best Clips -->
-
-        <div class="card">
-
-            <img src="gta4.png">
-
-            <div class="counter-box">
-
-                <h3>YOUTUBE</h3>
-
-                <p>
-                    FOLLOWER :
-                    <span class="counter"
-                          data-target="20">
-                        0
-                    </span>
-                </p>
-
-                <p>
-                    Total Views :
-                    <span class="counter"
-                          data-target="0">
-                        0
-                    </span>
-                </p>
-
-            </div>
-
-        </div>
-
-   <!-- Kick -->
-
-        <div class="card">
-
-            <img src="gta5.png">
-
-            <div class="counter-box">
-
-                <h3>Kick</h3>
-
-                <p>
-                    Followers :
-                    <span class="counter"
-                          data-target="200">
-                        0
-                    </span>
-                </p>
-
-                <p>
-                    Hours Watched :
-                    <span class="counter"
-                          data-target="10000">
-                        0
-                    </span>
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- BUSINESS -->
-
-        <div class="card">
-
-            <img src="gta6.png">
-
-            <div class="counter-box">
-
-                <h3>
-                    FOR BUSINESS OR ADS
-                </h3>
-
-                <p>
-                    iabdelshafi9@gmail.com
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <h2>
-            THANK YOU FOR SUPPORTING
-        </h2>
-
-        <h1>
-            MEDO GM
-        </h1>
-
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
