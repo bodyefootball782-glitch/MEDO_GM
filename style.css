@@ -12,7 +12,9 @@ body{min-height:100vh;background:#080808;color:var(--white);font-family:"Cairo",
   transform: none;
 }
 .bg-video-mobile{display:none}
-.bg-blur{position:absolute;inset:0;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+..bg-blur {
+  display: none;
+}
 .bg-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.48),rgba(5,5,5,.76) 55%,#080808 100%),linear-gradient(90deg,rgba(0,0,0,.45),transparent 50%,rgba(0,0,0,.45))}
 .red-glow{position:absolute;width:35vw;height:35vw;border-radius:50%;background:rgba(220,20,40,.17);filter:blur(100px);pointer-events:none}
 .glow-one{top:5%;right:-15%}.glow-two{bottom:5%;left:-18%}
