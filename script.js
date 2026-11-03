@@ -1,308 +1,43 @@
-// ======================
-// PAGE FADE
-// ======================
+const enterBtn = document.getElementById("enterBtn");
+const intro = document.getElementById("intro");
+const siteContent = document.getElementById("siteContent");
+const music = document.getElementById("siteMusic");
 
-window.addEventListener("load", () => {
+enterBtn.addEventListener("click", async () => {
+  // Browsers allow audio playback after this user interaction.
+  try {
+    music.volume = 0.55;
+    await music.play();
+  } catch (error) {
+    console.warn("Music could not start. Check that music.mp3 exists.", error);
+  }
 
-    document.body.style.opacity = "0";
-
-    setTimeout(() => {
-
-        document.body.style.transition =
-            "opacity 1s ease";
-
-        document.body.style.opacity = "1";
-
-    }, 100);
-
+  intro.classList.add("hide");
+  siteContent.classList.add("visible");
+  document.body.classList.add("entered");
+  setTimeout(() => intro.setAttribute("aria-hidden", "true"), 950);
 });
 
-
-// ======================
-// MUSIC
-// ======================
-// MUSIC PLAYER
-
-const audio =
-    document.getElementById(
-        "bgMusic"
-    );
-
-function playMusic(file){
-
-    audio.src = file;
-
-    audio.play();
-
+// Reveal sections smoothly as the visitor scrolls.
+const revealItems = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add("show"));
 }
 
-const volume =
-    document.getElementById(
-        "volume"
-    );
-
-volume.addEventListener(
-    "input",
-    () => {
-
-        audio.volume =
-            volume.value / 100;
-
-    }
-);
-
-const music =
-    document.getElementById(
-        "bgMusic"
-    );
-
-const musicBtn =
-    document.getElementById(
-        "musicBtn"
-    );
-
-musicBtn.onclick = () => {
-
-    if (music.paused) {
-
-        music.play();
-
-        musicBtn.innerText =
-            "🔇 MUTE";
-
-    } else {
-
-        music.pause();
-
-        musicBtn.innerText =
-            "🎵 MUSIC";
-    }
-};
-
-
-// ======================
-// VIDEO BACKGROUND
-// ======================
-
-const video =
-    document.getElementById(
-        "bgVideo"
-    );
-
-video.addEventListener(
-    "loadeddata",
-    () => {
-
-        video.style.display =
-            "block";
-    }
-);
-
-
-// ======================
-// LANGUAGE
-// ======================
-
-const enBtn =
-    document.getElementById(
-        "enBtn"
-    );
-
-const arBtn =
-    document.getElementById(
-        "arBtn"
-    );
-
-enBtn.onclick = () => {
-
-    enBtn.classList.add(
-        "active"
-    );
-
-    arBtn.classList.remove(
-        "active"
-    );
-
-    document.documentElement.lang =
-        "en";
-};
-
-arBtn.onclick = () => {
-
-    arBtn.classList.add(
-        "active"
-    );
-
-    enBtn.classList.remove(
-        "active"
-    );
-
-    document.documentElement.lang =
-        "ar";
-};
-
-
-// ======================
-// COUNTERS
-// ======================
-
-const counters =
-    document.querySelectorAll(
-        ".counter"
-    );
-
-let started = false;
-
-function startCounters() {
-
-    if (started) return;
-
-    const section =
-        document.querySelector(
-            ".cards"
-        );
-
-    if (
-        section
-            .getBoundingClientRect()
-            .top <
-        window.innerHeight - 100
-    ) {
-
-        started = true;
-
-        counters.forEach(
-            (counter) => {
-
-                const target =
-                    Number(
-                        counter.dataset
-                               .target
-                    );
-
-                let current = 0;
-
-                const increment =
-                    Math.max(
-                        1,
-                        target / 150
-                    );
-
-                function update() {
-
-                    if (
-                        current < target
-                    ) {
-
-                        current +=
-                            increment;
-
-                        counter.innerText =
-                            Math.floor(
-                                current
-                            ).toLocaleString();
-
-                        requestAnimationFrame(
-                            update
-                        );
-
-                    } else {
-
-                        counter.innerText =
-                            target.toLocaleString();
-                    }
-                }
-
-                update();
-
-            }
-        );
-    }
-}
-
-window.addEventListener(
-    "scroll",
-    startCounters
-);
-
-startCounters();
-
-
-// ======================
-// CARD ANIMATION
-// ======================
-
-const cards =
-    document.querySelectorAll(
-        ".card"
-    );
-
-const observer =
-    new IntersectionObserver(
-
-        (entries) => {
-
-            entries.forEach(
-                (entry) => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.style.opacity =
-                            "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-                    }
-                }
-            );
-
-        },
-
-        {
-            threshold:0.2
-        }
-
-    );
-
-cards.forEach((card) => {
-
-    card.style.opacity = "0";
-
-    card.style.transform =
-        "translateY(50px)";
-
-    card.style.transition =
-        ".8s";
-
-    observer.observe(card);
-
-});
-
-
-// ======================
-// HOVER EFFECT
-// ======================
-
-cards.forEach((card) => {
-
-    card.addEventListener(
-        "mouseenter",
-        () => {
-
-            card.style.transform =
-                "translateY(-10px)";
-        }
-    );
-
-    card.addEventListener(
-        "mouseleave",
-        () => {
-
-            card.style.transform =
-                "translateY(0)";
-        }
-    );
-
+// Keep both background videos looping and recover if playback is interrupted.
+document.querySelectorAll(".bg-video").forEach(video => {
+  video.addEventListener("ended", () => {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
 });

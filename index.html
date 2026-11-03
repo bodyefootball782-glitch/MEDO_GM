@@ -1,378 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>MEDO_GM</title>
-
-<link rel="stylesheet"
-      href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="MEDO — Official Creator Website" />
+  <title>MEDO | Official Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="background" aria-hidden="true">
+    <video class="bg-video bg-video-desktop" autoplay muted loop playsinline preload="auto">
+      <source src="background-pc.mp4" type="video/mp4">
+    </video>
+    <video class="bg-video bg-video-mobile" autoplay muted loop playsinline preload="auto">
+      <source src="background-mobile.mp4" type="video/mp4">
+    </video>
+    <div class="bg-blur"></div>
+    <div class="bg-shade"></div>
+    <div class="red-glow glow-one"></div>
+    <div class="red-glow glow-two"></div>
+  </div>
 
-<ahref="https://discord.gg/mQYqGksMM"
-           target="_blank"
-           class="discord_btn_top">
+  <div class="intro" id="intro">
+    <div class="intro-content">
+      <span class="intro-kicker">WELCOME TO</span>
+      <h1>MEDO<span>.</span></h1>
+      <p>YOUR WORLD STARTS HERE</p>
+      <button class="enter-btn" id="enterBtn">
+        <span>ادخل لعالمي</span>
+        <span class="enter-arrow">←</span>
+      </button>
+      <small>CLICK TO ENTER</small>
+    </div>
+  </div>
 
-    🚀 GO TO DISCORD
+  <audio id="siteMusic" src="music.mp3" loop preload="none"></audio>
 
-</a>
+  <main class="site-content" id="siteContent">
+    <header class="hero">
+      <div class="top-line"><span></span> OFFICIAL CREATOR WEBSITE <span></span></div>
+      <h1 class="main-name">MEDO<span>.</span></h1>
+      <p class="hero-subtitle">CONTENT CREATOR <i></i> GAMER <i></i> STREAMER</p>
+      <div class="title-underline"></div>
+    </header>
 
-<div class="language-switch">
-
-    <button id="enBtn"
-            class="active">
-        EN
-    </button>
-
-    <button id="arBtn">
-        ع
-    </button>
-
-</div>
-
-<video id="bgVideo"
-       autoplay
-       muted
-       loop
-       playsinline
-       style="display:none;">
-
-    <source src="background.mp4"
-            type="video/mp4">
-
-</video>
-
-<audio id="bgMusic"></audio>
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>
-            MEDO_GM
-        </h1>
-
-        <p class="tagline">
-            Best Of Streamer
-        </p>
-
-        <div class="status">
-            ● OFFLINE
-        </div>
-
-        <a href="https://kick.com/medo-gm"
-           target="_blank"
-           class="kick-btn">
-
-            WATCH ON KICK
-
+    <section class="social-section reveal" aria-label="Social media">
+      <div class="section-heading">
+        <span class="section-index">01</span>
+        <div><p>STAY CONNECTED</p><h2>تابعني على منصاتي</h2></div>
+      </div>
+      <div class="social-grid">
+        <a class="social-card donation" href="tel:01270087040">
+          <span class="social-icon">♥</span><span class="social-copy"><b>DONATION</b><small>Support the creator</small></span><span class="social-arrow">↗</span>
         </a>
-
-        <button id="musicBtn"
-                class="music-btn">
-
-            🎵 MUSIC
-
-        </button>
-
-        <div id="musicMenu">
-
-            <h3>
-                SELECT MUSIC
-            </h3>
-
-            <button onclick="playMusic('music1.mp3')">
-                1
-            </button>
-
-            <button onclick="playMusic('music2.mp3')">
-               2
-            </button>
-
-            <button onclick="playMusic('music3.mp3')">
-               3
-            </button>
-
-            <button onclick="playMusic('music4.mp3')">
-                4
-            </button>
-
-            <button onclick="playMusic('music5.mp3')">
-               5
-            </button>
-
-            <br><br>
-
-            🔉
-
-            <input type="range"
-                   id="volume"
-                   min="0"
-                   max="100"
-                   value="50">
-
-            🔊
-
-        </div>
-
-        <div class="links">
-
-            <a href="https://youtube.com/@medo-gm11?si=2WKBHYYtdP0e-yi1"
-               target="_blank">
-                YouTube
-            </a>
-
-            <a href=""
-               target="_blank">
-                Donations
-            </a>
-
-            <a href="https://www.tiktok.com/@medo_abdelshafi"
-               target="_blank">
-                TikTok
-            </a>
-
-            <a href="https://discord.gg/mQYqGksMM"
-               target="_blank">
-                Discord
-            </a>
-
-            <a href=""
-               target="_blank">
-                Facebook
-            </a>
-
-            <a href=""
-               target="_blank">
-                WhatsApp
-            </a>
-
-            <a href="#clips">
-                Clips
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<h2 class="scroll">
-
-    ↓ SCROLL DOWN ↓
-
-</h2>
-
-<section class="cards">
-<!-- Kick -->
-
-    <div class="card">
-
-        <img src="gta1.png">
-
-        <div class="counter-box">
-
-            <h3>Kick</h3>
-
-            <p>
-                Followers :
-                <span class="counter"
-                      data-target="200">
-                    0
-                </span>
-            </p>
-
-            <p>
-                Hours Watched :
-                <span class="counter"
-                      data-target="10000">
-                    0
-                </span>
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- TikTok -->
-
-    <div class="card">
-
-        <img src="gta2.png">
-
-        <div class="counter-box">
-
-            <h3>TikTok</h3>
-
-            <p>
-                Followers :
-                <span class="counter"
-                      data-target="115">
-                    0
-                </span>
-            </p>
-
-            <p>
-                Likes :
-                <span class="counter"
-                      data-target="350">
-                    0
-                </span>
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Discord -->
-
-    <div class="card">
-
-        <img src="gta3.png">
-
-        <div class="counter-box">
-
-            <h3>Discord</h3>
-
-            <p>
-                Members :
-                <span class="counter"
-                      data-target="70">
-                    0
-                </span>
-            </p>
-
-            <p>
-                Online :
-                <span class="counter"
-                      data-target="40">
-                    0
-                </span>
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- YouTube -->
-
-    <div class="card">
-
-        <img src="gta4.png">
-
-        <div class="counter-box">
-
-            <h3>YouTube</h3>
-
-            <p>
-                Subscribers :
-                <span class="counter"
-                      data-target="20">
-                    0
-                </span>
-            </p>
-
-            <p>
-                Views :
-                <span class="counter"
-                      data-target="0">
-                    0
-                </span>
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Extra -->
-
-    <div class="card">
-
-        <img src="gta5.png">
-
-        <div class="counter-box">
-
-            <h3>
-                MEDO IN CONTENT CREATOR
-            </h3>
-
-        </div>
-
-    </div>
-
-    <!-- BUSNESS -->
-
-    <div class="card">
-
-        <img src="gta6.png">
-
-        <div class="counter-box">
-
-            <h3>
-               BUSNESS
-            </h3>
-
-            <p>
-                
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section id="clips">
-
-    <h2>
-        BEST CLIPS
-    </h2>
-
-    <div class="clips-container">
-
-        <video controls>
-            <source src="clip1.mp4"
-                    type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="clip2.mp4"
-                    type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="clip3.mp4"
-                    type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="clip4.mp4"
-                    type="video/mp4">
-        </video>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <h2>
-        THANK YOU FOR SUPPORTING
-    </h2>
-
-    <h1>
-        MEDO_GM
-    </h1>
-
-</footer>
-
-<script src="script.js"></script>
-
+        <a class="social-card discord" href="https://discord.gg/GAsfHFxkk" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">◉</span><span class="social-copy"><b>DISCORD</b><small>Join the community</small></span><span class="social-arrow">↗</span>
+        </a>
+        <a class="social-card tiktok" href="https://www.tiktok.com/@medo_abdelshafi" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">♪</span><span class="social-copy"><b>TIKTOK</b><small>Watch my videos</small></span><span class="social-arrow">↗</span>
+        </a>
+        <a class="social-card kick" href="https://kick.com/MEDO_GM" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">K</span><span class="social-copy"><b>KICK</b><small>Catch me live</small></span><span class="social-arrow">↗</span>
+        </a>
+        <a class="social-card whatsapp" href="https://whatsapp.com/channel/0029VbCz03VFXUuYEE3hAy39" target="_blank" rel="noopener noreferrer">
+          <span class="social-icon">⌕</span><span class="social-copy"><b>WHATSAPP</b><small>Follow the channel</small></span><span class="social-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="gallery-section reveal">
+      <div class="section-heading">
+        <span class="section-index">02</span>
+        <div><p>BEST MOMENTS</p><h2>لقطات من عالمي</h2></div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item"><img src="gta.png" alt="MEDO moment 1" loading="lazy"><span>01</span></figure>
+        <figure class="gallery-item"><img src="gta2.png" alt="MEDO moment 2" loading="lazy"><span>02</span></figure>
+        <figure class="gallery-item"><img src="gta3.png" alt="MEDO moment 3" loading="lazy"><span>03</span></figure>
+        <figure class="gallery-item"><img src="gta4.png" alt="MEDO moment 4" loading="lazy"><span>04</span></figure>
+        <figure class="gallery-item"><img src="gta5.png" alt="MEDO moment 5" loading="lazy"><span>05</span></figure>
+        <figure class="gallery-item"><img src="gta6.png" alt="MEDO moment 6" loading="lazy"><span>06</span></figure>
+      </div>
+    </section>
+
+    <footer class="footer reveal">
+      <div class="footer-line"></div>
+      <p class="footer-ar">هنوصل في يوم بإذن الله</p>
+      <p class="footer-en">THE JOURNEY IS JUST BEGINNING</p>
+      <div class="footer-brand">MEDO<span>.</span></div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
